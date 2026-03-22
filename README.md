@@ -21,7 +21,7 @@ The project also integrates **DevOps workflows** such as automated builds, conta
 # Architecture Flow
 
 ```
-<img width="531" height="925" alt="archi_dev" src="https://github.com/user-attachments/assets/28c000e8-1fe2-449d-b3fb-7cb097615994" />
+[<img width="531" height="925" alt="archi_dev" src="https://github.com/user-attachments/assets/28c000e8-1fe2-449d-b3fb-7cb097615994" />](https://github.com/PushprajSingh16/Devops_entertainment_project/blob/main/archi_dev.png)
 
 ```
 
