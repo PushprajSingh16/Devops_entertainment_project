@@ -21,8 +21,8 @@ The project also integrates **DevOps workflows** such as automated builds, conta
 # Architecture Flow
 
 ```
-<img width="531" height="925" alt="archi_dev" src="https://github.com/user-attachments/assets/37c22848-0589-496a-b3d3-aa1737a11f52" />
-"C:\Users\ANUSHKA\Downloads\archi_dev.png"
+
+![Architecture Diagram](diagrams/archi_dev.png)
 
 ```
 
