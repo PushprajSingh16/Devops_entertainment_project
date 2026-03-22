@@ -4,7 +4,7 @@ function App() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/movies")
+    fetch("http://54.164.131.38:5000/api/movies")
       .then((res) => res.json())
       .then((data) => {
         const formatted = data.map((movie) => ({
