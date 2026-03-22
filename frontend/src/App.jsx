@@ -1,9 +1,21 @@
+import { useEffect, useState } from "react";
+
 function App() {
-  const movies = [
-    { title: "The Adventure", rating: "8.2", description: "An exciting journey through unknown lands filled with thrills and discoveries." },
-    { title: "Space Journey", rating: "7.9", description: "A sci-fi adventure exploring the vastness of space and the mysteries of the universe." },
-    { title: "Comedy Night", rating: "8.5", description: "A hilarious comedy that will keep you laughing from start to finish." }
-  ];
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/movies")
+      .then((res) => res.json())
+      .then((data) => {
+        const formatted = data.map((movie) => ({
+          title: movie.name,
+          rating: "8.0",
+          description: "Sample description"
+        }));
+        setMovies(formatted);
+      })
+      .catch((err) => console.error(err));
+  }, []);
 
   return (
     <div className="app">
@@ -11,6 +23,7 @@ function App() {
         <h1>Entertainment App</h1>
         <p className="subtitle">Dockerized DevOps Project</p>
       </header>
+
       <section className="movies-section">
         <div className="movies-grid">
           {movies.map((movie, index) => (
