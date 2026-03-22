@@ -21,9 +21,7 @@ The project also integrates **DevOps workflows** such as automated builds, conta
 # Architecture Flow
 
 ```
-
-![Architecture Diagram](diagrams/archi_dev.png)
-
+![Architecture Diagram](archi_dev.png)
 ```
 
 This architecture enables automated builds, container-based deployment, and scalable cloud infrastructure.
