@@ -4,19 +4,19 @@ pipeline {
     stages {
         stage('Build Backend Image') {
             steps {
-                bat 'docker build -t backend-app .\\backend'
+                sh 'docker build -t backend-app ./backend'
             }
         }
 
         stage('Build Frontend Image') {
             steps {
-                bat 'docker build -t frontend-app .\\frontend'
+                sh 'docker build -t frontend-app ./frontend'
             }
         }
 
         stage('Run Containers') {
             steps {
-                bat 'docker compose up -d'
+                sh 'docker compose up -d'
             }
         }
     }
