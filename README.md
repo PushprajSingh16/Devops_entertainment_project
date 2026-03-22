@@ -17,7 +17,11 @@ Instead of running the application directly on a system, it is **containerized u
 The project also integrates **DevOps workflows** such as automated builds, container orchestration, and cloud deployment.
 
 ---
+## Architecture Flow
 
+![Architecture Flow](archi_dev.png)
+
+This architecture enables automated builds, container-based deployment, and scalable cloud infrastructure.
 # Architecture Flow
 
 ```
