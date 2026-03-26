@@ -4,16 +4,9 @@ function App() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    fetch("http://54.164.131.38:5000/api/movies")
+    fetch("http://52.91.78.15:5000/api/movies")
       .then((res) => res.json())
-      .then((data) => {
-        const formatted = data.map((movie) => ({
-          title: movie.name,
-          rating: "8.0",
-          description: "Sample description"
-        }));
-        setMovies(formatted);
-      })
+      .then((data) => setMovies(data))
       .catch((err) => console.error(err));
   }, []);
 
@@ -26,11 +19,11 @@ function App() {
 
       <section className="movies-section">
         <div className="movies-grid">
-          {movies.map((movie, index) => (
-            <div key={index} className="movie-card">
-              <h2 className="movie-title">{movie.title}</h2>
-              <p className="movie-rating">⭐ {movie.rating}/10</p>
-              <p className="movie-description">{movie.description}</p>
+          {movies.map((movie) => (
+            <div key={movie.id} className="movie-card">
+              <h2 className="movie-title">{movie.name}</h2>
+              <p className="movie-rating">⭐ 8.0/10</p>
+              <p className="movie-description">Sample description</p>
             </div>
           ))}
         </div>
