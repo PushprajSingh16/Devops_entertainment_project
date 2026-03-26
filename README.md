@@ -1,176 +1,256 @@
----
-
 # Dockerized Entertainment React Service
 
-A containerized entertainment web application built using **React**, packaged with **Docker**, and deployed using **DevOps practices including CI/CD, Jenkins, and AWS**.
+A **containerized full-stack entertainment web application** built using **React (frontend)** and **Node.js + Express (backend)**, deployed using **Docker, Docker Compose, Jenkins CI/CD, and AWS EC2**.
 
-This project demonstrates how a modern web application can be developed, containerized, automated, and deployed using industry-standard DevOps tools.
+This project demonstrates how modern applications can be **developed, containerized, automated, and deployed using DevOps practices**.
 
 ---
 
 # Project Overview
 
-The **Dockerized Entertainment React Service** is a simple web-based entertainment application that displays a list of movies along with their ratings.
+The **Dockerized Entertainment React Service** is a web application that displays entertainment content such as movies along with their ratings.
 
-Instead of running the application directly on a system, it is **containerized using Docker**, which ensures portability and consistent execution across different environments.
+The project focuses on implementing **DevOps principles**, including:
 
-The project also integrates **DevOps workflows** such as automated builds, container orchestration, and cloud deployment.
+- Containerization using Docker
+- Multi-container orchestration using Docker Compose
+- Automated CI/CD pipeline using Jenkins
+- Cloud deployment using AWS EC2
+
+The goal of the project is to demonstrate **real-world DevOps workflow from development to deployment**.
 
 ---
+
+# System Architecture
+
 ## Architecture Flow
 
-![Architecture Flow](archi_dev.png)
+   ![Architecture Flow](archi_dev.png)
 
 ---
+
+### Architecture Workflow
+
+This architecture ensures that the application can be **built, tested, containerized, and deployed automatically**.
+
+--- 
 
 # Tech Stack
 
-Frontend
+## Frontend
+- React.js
+- Vite
+- CSS
 
-* React.js
-* Vite
+## Backend
+- Node.js
+- Express.js
 
-Backend
+## DevOps Tools
+- Docker
+- Docker Compose
+- Jenkins
+- GitHub
 
-* Node.js
-* Express.js
+## Cloud Platform
+- AWS EC2
 
-DevOps Tools
-
-* Docker
-* Docker Compose
-* Jenkins
-* GitHub
-* AWS EC2
-* Kubernetes (planned)
+## Future DevOps Tools
+- Kubernetes
+- Prometheus
+- Grafana
 
 ---
 
 # Features
 
-* Simple entertainment UI displaying movie titles and ratings
-* React-based frontend application
-* Docker containerization
-* Multi-container setup using Docker Compose
-* CI/CD automation using Jenkins
-* Cloud deployment on AWS EC2
-* Scalable architecture with Kubernetes support (future enhancement)
+- Responsive React based user interface
+  
+- Backend API using Node.js and Express
+  
+- Docker containerization
+  
+- Multi-container setup using Docker Compose
+  
+- Automated CI/CD pipeline using Jenkins
+  
+- Deployment on AWS EC2 cloud
+  
+- DevOps based project architecture
+  
+- Scalable design for Kubernetes integration
 
 ---
 
-# Project Structure
-
-```
-Dockerized-Entertainment-React-Service
+# Repository Structure
+```bash
+Devops_entertainment_project
 │
-├── frontend/
-│   ├── src/
-│   ├── public/
-│   └── package.json
+├── frontend
+│ ├── src
+│ ├── public
+│ └── package.json
 │
-├── backend/
-│   └── server.js
+├── backend
+│ ├── controllers
+│ ├── routes
+│ ├── server.js
+│ ├── package.json
+│ └── Dockerfile
 │
-├── Dockerfile
 ├── docker-compose.yml
 ├── Jenkinsfile
+├── archi_dev.png
+├── Devops_HLDfile.pdf
+├── Devops_LLDfile.pdf
 └── README.md
 ```
-
 ---
 
 # Installation and Setup
 
-### Clone the Repository
+## Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/dockerized-entertainment-react-service.git
-cd dockerized-entertainment-react-service
+git clone https://github.com/PushprajSingh16/Devops_entertainment_project.git
+cd Devops_entertainment_project
 ```
 
----
 
-### Run Using Docker
+## Run Project Locally
 
-Build Docker image
+Run Backend
+```bash
+cd backend
+npm install
+node server.js
+```
+
+Run Frontend
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Application will run at:
+```bash
+http://localhost:5173
+```
+
+## Docker Setup
+
+Build Docker Image
+```bash
+docker build -t entertainment-app .
+```
+
+Run Docker Container
+```bash
+docker run -p 3000:3000 entertainment-app
+```
+
+## Docker Compose
+Docker Compose is used to manage multiple containers for frontend and backend services.
+
+Run application using:
 
 ```bash
-docker build -t react-entertainment-app .
+docker-compose up --build
 ```
-
-Run container
-
+Stop containers:
 ```bash
-docker run -p 3000:3000 react-entertainment-app
+docker-compose down
 ```
 
----
+## CI/CD Pipeline
 
-### Run Using Docker Compose
+The project integrates Jenkins CI/CD pipeline for automation.
 
+- Pipeline Workflow
+
+- Developer pushes code to GitHub repository
+
+- Jenkins detects new commit
+
+- Jenkins triggers pipeline
+
+- Docker image is built
+
+- Image is deployed to AWS EC2
+
+- Application becomes accessible online
+
+This pipeline ensures automated build and deployment process.
+
+## AWS Deployment
+
+The application is deployed on AWS EC2 instance using Docker containers.
+
+Deployment Steps:
+
+- Launch EC2 instance
+
+- Install Docker
+
+- Clone GitHub repository
+
+- Build Docker image
+
+- Run container using Docker Compose
+
+Access the application using:
 ```bash
-docker-compose up
+http://<EC2_PUBLIC_IP>:3000
 ```
 
-Open browser:
-
+## DevOps Workflow
+```bash
+Developer
+↓
+GitHub Repository
+↓
+Jenkins CI/CD Pipeline
+↓
+Docker Build
+↓
+Docker Container
+↓
+AWS EC2 Deployment
+↓
+User Access
 ```
-http://localhost:3000
-```
-
----
-
-# CI/CD Pipeline
-
-The project uses **Jenkins for Continuous Integration and Continuous Deployment**.
-
-Pipeline Flow:
-
-1. Developer pushes code to GitHub
-2. Jenkins detects changes
-3. Jenkins builds Docker image
-4. Docker image is deployed to AWS EC2
-5. Application becomes accessible through public IP
-
----
-
-# Deployment
-
-The application is deployed on **AWS EC2 using Docker containers**.
-
-Steps followed:
-
-1. Launch EC2 instance
-2. Install Docker
-3. Pull project repository
-4. Build Docker image
-5. Run container
-
-Access application:
-
-```
-http://<EC2-PUBLIC-IP>:3000
-```
-
----
-
-# Future Improvements
-
-* Kubernetes container orchestration
-* Load balancing
-* Monitoring using Prometheus and Grafana
-* CI/CD enhancement using GitHub Actions
-
----
+This workflow ensures continuous integration and continuous deployment.
 
 # Screenshots
 
-(Add screenshots of your application UI here)
+Add project screenshots here.
+
+Examples:
+
+Application UI
+Docker container running
+Jenkins pipeline execution
+AWS deployment
 
 Example:
 
-```
+/screenshots/app_ui.png
+Documentation
 
-```
+# Project design documents included in repository:
 
----
+- HLD (High Level Design) – System architecture and workflow
+- LLD (Low Level Design) – Detailed system components
+
+# Future Improvements
+
+### Future enhancements for this project include:
+
+- Kubernetes container orchestration
+- Load balancing
+- Monitoring using Prometheus and Grafana
+- Infrastructure automation using Terraform
+- Authentication and user management
+- Database integration
+
