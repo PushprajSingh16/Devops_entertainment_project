@@ -224,19 +224,7 @@ This workflow ensures continuous integration and continuous deployment.
 
 # Screenshots
 
-Add project screenshots here.
-
-Examples:
-
-Application UI
-Docker container running
-Jenkins pipeline execution
-AWS deployment
-
-Example:
-
 /screenshots/app_ui.png
-Documentation
 
 # Project design documents included in repository:
 
